@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDN Kayakah - Beranda Ceria</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:'Comic Sans MS',Arial,sans-serif;margin:0;background:#FFF9C4;color:#333}
+header{background:linear-gradient(180deg,#FF4081,#FF9800,#FFEB3B);color:#fff;padding:18px 14px 22px;text-align:center;position:relative;overflow:hidden}
+header h1{margin:4px 0;font-size:48px;color:white;text-shadow:3px 3px 0 #7C4DFF,6px 6px 0 #2196F3}
+header p{margin:6px 0 0;font-weight:bold;background:#fff;color:#E91E63;display:inline-block;padding:8px 16px;border-radius:20px}
+.awan{font-size:38px;animation:jalan 6s ease-in-out infinite}
+@keyframes jalan{0%,100%{transform:translateX(-15px)}50%{transform:translateX(15px)}}
+.kartun-besar{font-size:72px;line-height:1;margin:10px 0;letter-spacing:8px;animation:lompat 1.2s ease-in-out infinite}
+@keyframes lompat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.pengumuman{background:#FFEB3B;padding:12px 10px;border-bottom:4px solid #FF9800;font-weight:bold;font-size:17px;color:#BF360C;overflow:hidden;white-space:nowrap}
+.pengumuman span{background:#FF5252;color:white;padding:5px 12px;border-radius:20px;margin-right:10px}
+nav{background:#fff;padding:12px;text-align:center;box-shadow:0 3px 8px #ddd;position:sticky;top:0;z-index:10}
+nav a{margin:4px;display:inline-block;padding:9px 16px;border-radius:20px;text-decoration:none;color:white;font-weight:bold;font-size:14px;box-shadow:0 3px 0 rgba(0,0,0,.2)}
+nav a:nth-child(1){background:#FF5252}nav a:nth-child(2){background:#FF9800}nav a:nth-child(3){background:#4CAF50}nav a:nth-child(4){background:#2196F3}nav a:nth-child(5){background:#9C27B0}nav a:nth-child(6){background:#FF4081}nav a:nth-child(7){background:#FF6D00}nav a:nth-child(8){background:#00BCD4}nav a:nth-child(9){background:#E91E63}nav a:nth-child(10){background:#333}
+.wrap{max-width:920px;margin:auto;padding:0 14px 20px}
+.hero{background:white;margin:20px 0;padding:0 0 22px;border-radius:30px;text-align:center;border:5px solid #FF4081;overflow:hidden;box-shadow:0 8px 20px rgba(255,64,129,.3)}
+.hero-banner{background:linear-gradient(90deg,#FF5252,#FF9800,#FFEB3B,#4CAF50,#2196F3,#9C27B0);padding:22px 10px}
+.hero-banner div{font-size:64px}
+.hero h2{color:#E91E63;font-size:30px;margin:14px 10px 0}
+.visi{background:#E3F2FD;padding:14px;border-radius:12px;margin:15px}
+.btn{display:inline-block;background:linear-gradient(90deg,#FF5252,#FF9800);color:white;padding:16px 26px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:18px;box-shadow:0 4px 0 #c62828}
+.btn2{display:inline-block;background:#4CAF50;color:white;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:bold;margin:6px}
+.kartun-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 8px}
+.kartun-kotak{width:150px;background:#FFF3E0;border-radius:18px;padding:12px 6px;border:3px solid #FFEB3B}
+.kartun-kotak div{font-size:48px}
+.kartun-kotak b{font-size:12px}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin:15px 0}
+.stats div{padding:16px;border-radius:16px;color:white;text-align:center;font-weight:bold;box-shadow:0 4px 0 rgba(0,0,0,.2)}
+.stats div b{font-size:26px;display:block}
+.c1{background:#FF5252}.c2{background:#FF9800}.c3{background:#2196F3}.c4{background:#4CAF50}
+.card{background:white;padding:22px;border-radius:25px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,.12);border:3px solid #FFE082;overflow:hidden}
+.card h3{margin-top:0;font-size:22px}
+.banner-kartun{background:linear-gradient(90deg,#FF5252,#FF9800,#FFEB3B,#4CAF50,#2196F3,#9C27B0);border-radius:16px;padding:16px;text-align:center;font-size:48px;margin-bottom:12px;letter-spacing:6px}
+table{width:100%;border-collapse:collapse}
+td{padding:9px;border-bottom:1px solid #eee}
+td:first-child{font-weight:bold;width:35%;color:#E91E63}
+.guru{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.guru div{padding:14px;border-radius:14px;font-size:14px}
+.guru div:nth-child(odd){background:#FFF3E0}.guru div:nth-child(even){background:#E3F2FD}
+.ekstra{display:flex;flex-wrap:wrap;gap:8px}
+.ekstra span{background:#F3E5F5;padding:10px 14px;border-radius:20px;font-weight:bold}
+.peng-card{background:#FFF3E0;border:3px solid #FF9800}.peng-card li{margin-bottom:8px;line-height:1.5}
+.kuis-warna{background:linear-gradient(135deg,#FFEBEE,#FFF3E0,#E8F5E9,#E3F2FD,#F3E5F5);border:4px solid #FF4081!important}
+.kartu{background:white;padding:20px;border-radius:20px;max-width:650px;margin:auto;box-shadow:0 5px 15px rgba(0,0,0,.15);border:3px solid #FFEB3B}
+.kartu h2{text-align:center;color:#1565C0;font-size:26px}.sekolah{text-align:center;font-weight:bold;color:#2E7D32;margin-top:-10px}
+.kartu button{width:100%;padding:14px;margin:6px 0;border:none;border-radius:15px;font-size:17px;cursor:pointer;font-weight:bold;color:white;box-shadow:0 4px 0 rgba(0,0,0,.2);font-family:inherit}
+.k1{background:linear-gradient(90deg,#FF5252,#FF1744)!important}.k2{background:linear-gradient(90deg,#FF9800,#FF6D00)!important}.k3{background:linear-gradient(90deg,#FFEB3B,#FDD835)!important;color:#333!important}.k4{background:linear-gradient(90deg,#4CAF50,#00C853)!important}.k5{background:linear-gradient(90deg,#2196F3,#2979FF)!important}.k6{background:linear-gradient(90deg,#9C27B0,#E040FB)!important}
+.m-semua{background:linear-gradient(90deg,#FF5252,#FF9800,#FFEB3B,#4CAF50,#2196F3,#9C27B0)!important}.m-mtk{background:#FF5252!important}.m-ipa{background:#00BCD4!important}.m-indo{background:#FF9800!important}.m-agama{background:#4CAF50!important}.m-pjok{background:#2196F3!important}.m-pramuka{background:#795548!important}.m-pkn{background:#E91E63!important}.m-inggris{background:#9C27B0!important}.btn-abu{background:#BDBDBD!important;color:#333!important}
+#poin{font-size:19px;font-weight:bold;text-align:center;color:#fff;background:linear-gradient(90deg,#FF4081,#7C4DFF);padding:10px;border-radius:12px}
+#soal{background:#FFF9C4;padding:15px;border-radius:12px;border:2px dashed #FF9800;font-size:18px;text-align:center}
+#pilihan button{background:#fff!important;color:#333!important;border:3px solid #FFEB3B!important;box-shadow:0 3px 0 #FF9800}
+#pilihan button.betul{background:#00C853!important;color:white!important;border-color:#00C853!important}
+#pilihan button.salah{background:#FF1744!important;color:white!important;border-color:#FF1744!important}
+#hasil{text-align:center;font-weight:bold;margin-top:10px;min-height:24px;font-size:19px;padding:10px;border-radius:12px}
+#hasil.betul-bg{background:#C8E6C9;color:#1B5E20}#hasil.salah-bg{background:#FFCDD2;color:#B71C1C}
+#confetti{text-align:center;font-size:28px;min-height:32px}
+.galeri-wrap{background:linear-gradient(135deg,#FFF3E0,#E3F2FD,#F3E5F5);border:4px solid #FF9800!important}
+.galeri{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.g-card{background:white;border-radius:18px;overflow:hidden;text-align:center;padding-bottom:12px;box-shadow:0 4px 10px rgba(0,0,0,.12);border:3px solid #FFEB3B}
+.g-card.kepsek{grid-column:1 / -1;max-width:320px;margin:auto;width:100%;border-color:#FF5252}
+.g-card .foto-kartun{height:170px;display:flex;align-items:center;justify-content:center;font-size:90px}
+.g-card.kepsek .foto-kartun{height:200px;font-size:110px}
+.g-card b{display:block;margin:10px 8px 2px;font-size:16px;color:#1565C0}.g-card span{font-size:13px;color:#666;display:block;padding:0 8px}
+.g-btn{margin-top:8px;background:#FF4081;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;font-size:13px}
+.kegiatan-wrap{background:linear-gradient(135deg,#E8F5E9,#E3F2FD,#FFF3E0);border:4px solid #4CAF50!important}
+.kegiatan-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.k-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.12);border:3px solid #C8E6C9;text-align:center;padding-bottom:10px}
+.k-card .k-kartun{height:130px;display:flex;align-items:center;justify-content:center;font-size:72px}
+.k-card img{width:100%;height:180px;object-fit:cover;display:block;cursor:pointer}
+.k-card b{display:block;margin:8px 6px 2px;font-size:14px;color:#2E7D32}.k-card span{font-size:12px;color:#777;display:block;padding:0 6px}
+.k-del{background:#FF5252;color:white;border:none;padding:6px 12px;border-radius:15px;font-weight:bold;cursor:pointer;font-size:12px;margin-top:4px}
+.tambah-box{background:#fff;border:3px dashed #4CAF50;border-radius:16px;padding:18px;text-align:center}
+.tambah-box input{width:100%;margin:6px 0;padding:9px;border:1px solid #ccc;border-radius:10px}.tambah-box select{width:100%;padding:9px;border:1px solid #ccc;border-radius:10px;margin:6px 0}
+.btn-tambah{background:#4CAF50;color:white;border:none;padding:12px 20px;border-radius:20px;font-weight:bold;cursor:pointer;font-size:15px;width:100%}
+.admin-bar{background:#333;color:white;padding:12px;text-align:center;position:sticky;top:0;z-index:20;font-size:14px}.admin-bar b{color:#FFEB3B}
+.btn-login{background:#FFEB3B;color:#333;border:none;padding:8px 16px;border-radius:20px;font-weight:bold;cursor:pointer;margin-left:8px}.btn-logout{background:#FF5252;color:white;border:none;padding:8px 16px;border-radius:20px;font-weight:bold;cursor:pointer;margin-left:8px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:99;justify-content:center;align-items:center}
+.modal-box{background:white;width:92%;max-width:400px;padding:22px;border-radius:20px;text-align:center;max-height:90vh;overflow:auto}
+.modal-box select,.modal-box input{width:100%;padding:12px;margin:8px 0;border:2px solid #FF9800;border-radius:12px;font-size:15px}
+.modal-box button{width:100%;padding:12px;border:none;border-radius:12px;font-weight:bold;cursor:pointer;font-size:15px;margin-top:6px}
+.lock-box{background:#FFF3E0;border:2px dashed #FF9800;padding:14px;border-radius:12px;text-align:center;margin:12px 0}
+.hanya-admin{display:none}body.admin .hanya-admin{display:block}body.admin .hanya-admin-inline{display:inline-block!important}.hanya-admin-inline{display:none!important}
+.kepsek-panel{background:linear-gradient(135deg,#FFEBEE,#FFF3E0);border:4px solid #FF5252!important}.kepsek-panel input{padding:8px;border:1px solid #ccc;border-radius:8px;width:100%}
+.hanya-kepsek{display:none}body.kepsek .hanya-kepsek{display:block}
+.saran-wrap{background:linear-gradient(135deg,#E3F2FD,#F3E5F5,#FFF3E0);border:4px solid #2196F3!important}
+.saran-form{background:#fff;border:3px dashed #2196F3;border-radius:16px;padding:16px}
+.saran-form input,.saran-form select,.saran-form textarea{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:10px;font-family:inherit;font-size:14px}.saran-form textarea{min-height:90px}
+.saran-item{background:#fff;border-left:6px solid #2196F3;border-radius:12px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.saran-item.saran-kritik{border-left-color:#FF5252}.saran-item.saran-puji{border-left-color:#4CAF50}.saran-item.saran-tanya{border-left-color:#FF9800}
+.balas-box{background:#E8F5E9;border-radius:10px;padding:10px;margin-top:8px;font-size:13px;border:1px solid #C8E6C9}
+.btn-saran{background:linear-gradient(90deg,#2196F3,#9C27B0);color:white;border:none;padding:13px;border-radius:20px;font-weight:bold;cursor:pointer;width:100%;font-size:15px}
+.chip{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:bold;color:white;margin-right:6px}
+footer{background:#333;color:white;text-align:center;padding:18px;border-top:6px solid #FFEB3B}
+@media(max-width:600px){.stats{grid-template-columns:1fr 1fr}.guru{grid-template-columns:1fr}.galeri,.kegiatan-grid{grid-template-columns:1fr 1fr}header h1{font-size:32px}.kartun-kotak{width:110px}}
+</style>
+</head>
+<body>
+
+<div class="admin-bar" id="adminBar">
+<span id="adminStatus">👀 Mode Pengunjung - Hanya Melihat Galeri</span>
+<button class="btn-login" id="btnLoginTop" onclick="bukaLogin()">🔐 Login Admin Guru</button>
+<button class="btn-logout" id="btnLogoutTop" onclick="logoutAdmin()" style="display:none">🚪 Keluar</button>
+</div>
+
+<div class="modal" id="modalLogin">
+<div class="modal-box">
+<div style="font-size:60px">👩‍🏫👨‍🏫🏫</div>
+<h2 style="margin:8px 0 0;color:#E65100">🔐 Login Admin</h2>
+<p style="font-size:13px;color:#666">Hanya Kepala Sekolah, Guru & Staf</p>
+<label style="font-weight:bold">Pilih Nama Anda:</label>
+<select id="loginNama"></select>
+<label style="font-weight:bold">Masukkan PIN:</label>
+<input type="password" id="loginPIN" placeholder="Masukkan PIN Anda" inputmode="numeric">
+<p id="loginError" style="color:#D32F2F;font-weight:bold;min-height:20px"></p>
+<button style="background:#4CAF50;color:white" onclick="cekLogin()">✅ MASUK SEBAGAI ADMIN</button>
+<button style="background:#BDBDBD" onclick="tutupLogin()">❌ Batal</button>
+<p style="font-size:12px;color:#888;margin-top:10px">👑 <b>Kepala Sekolah PIN: 1976</b><br>👩‍🏫 Guru / Staf PIN Awal: <b>1234</b></p>
+</div>
+</div>
+
+<header>
+<div class="awan">☁️ 🌈 ☁️ 🎈 ☁️ 🌈 ☁️</div>
+<div class="kartun-besar">👧🏫👦 📚 🎨</div>
+<h1>🌈 SDN KAYAKAH 🌈</h1>
+<p>Desa Kayakah - Amuntai Selatan - Hulu Sungai Utara</p><br>
+<p>⭐ NPSN 30302788 | Berdiri Tahun 1976 ⭐</p>
+<div style="font-size:30px;margin-top:8px">🏫 📚 🎨 ⚽ 🎤 🥁 💻 🌱 🎉</div>
+</header>
+
+<div class="pengumuman"><span>📢 PENGUMUMAN</span><marquee behavior="scroll" scrollamount="6">🎉 Selamat Datang di SDN Kayakah! &nbsp;&nbsp; 💬 Ada Kritik & Saran? Isi di Kotak Saran Di Bawah Ya! &nbsp;&nbsp; 📚 Senin: Upacara Bendera Jam 07.30 WITA &nbsp;&nbsp; 🕌 Jumat: Yasinan & Infaq &nbsp;&nbsp; 🥁 Sabtu: Pramuka Jam 15.00 WITA &nbsp;&nbsp;</marquee></div>
+
+<nav>
+<a href="#">🏠 Beranda</a><a href="#profil">📚 Profil</a><a href="#guru">👩‍🏫 Guru</a><a href="#galeri">📸 Galeri Guru</a><a href="#kegiatan">🎉 Galeri Kegiatan</a><a href="#kuis">🎮 Kuis Seru</a><a href="#saran">💬 Kritik & Saran</a><a href="#kontak">📞 Kontak</a><a href="#" onclick="bukaLogin();return false">🔐 Login Admin</a>
+</nav>
+<div class="wrap">
+
+<div class="hero">
+<div class="hero-banner"><div>👧📚👦🎨⚽🕌🌱🎉</div><div style="font-size:18px;color:white;font-weight:bold;margin-top:6px">SEKOLAH CERIA • ANAK HEBAT • GURU HEBAT</div></div>
+<h2>🎉 Selamat Datang di Website SDN Kayakah 🎉</h2>
+<p style="padding:0 16px">Tempat Anak Hebat Belajar, Bermain & Berprestasi! 🌟</p>
+<div class="kartun-row">
+<div class="kartun-kotak"><div>📚😊</div><b>📚 Rajin Belajar</b></div>
+<div class="kartun-kotak"><div>🎨🌈</div><b>🎨 Kreatif</b></div>
+<div class="kartun-kotak"><div>⚽💪</div><b>⚽ Sehat & Kuat</b></div>
+<div class="kartun-kotak"><div>🕌❤️</div><b>🕌 Berakhlak Mulia</b></div>
+</div>
+<div class="visi"><b>🌟 Visi Kami:</b><br>"Terwujudnya Insan Pembelajar yang Berbudi Luhur, Mandiri, dan Sehat"</div>
+<a class="btn" href="#kuis">🎮 MAIN KUIS + TEPUK TANGAN, YUK!</a><br><br>
+<a class="btn2" href="#galeri">📸 Galeri Guru</a>
+<a class="btn2" href="#kegiatan">🎉 Galeri Kegiatan</a>
+<a class="btn2" href="#saran">💬 Kritik & Saran</a>
+<a class="btn2" href="../sdn-kayakah/index.html">▶ Masuk Web Belajar Siswa</a>
+</div>
+
+<div class="card kepsek-panel hanya-kepsek" id="panelKepsek">
+<h3 style="text-align:center;color:#C62828">👑 PANEL KHUSUS KEPALA SEKOLAH - KELOLA GURU & PIN 👑</h3>
+<p style="text-align:center;font-size:13px">Hanya Pak Wahyu Aji yang bisa lihat panel ini!</p>
+<div style="background:#fff;padding:12px;border-radius:12px">
+<b>➕ Tambah Guru / Staf Baru - Langsung Jadi Kartu Galeri!</b><br>
+<input type="text" id="namaBaru" placeholder="Nama Lengkap - Contoh: Budi Santoso, S.Pd">
+<input type="text" id="pinBaru" placeholder="PIN Baru - Contoh: 5678" inputmode="numeric" style="margin-top:6px">
+<input type="text" id="jabatanBaru" placeholder="Jabatan - Contoh: Guru Kelas" style="margin-top:6px">
+<input type="file" id="fotoBaru" accept="image/*" style="margin-top:6px">
+<button onclick="tambahAdminBaru()" style="background:#4CAF50;color:white;border:none;padding:12px;border-radius:10px;font-weight:bold;cursor:pointer;width:100%;margin-top:6px">➕ TAMBAH GURU BARU + BUATKAN PIN</button>
+<p id="pesanTambahAdmin" style="font-weight:bold;color:#2E7D32;text-align:center"></p>
+</div><br>
+<b>📋 Daftar Guru & Staf - Ganti PIN / Hapus Guru:</b>
+<div id="tabelPIN"></div>
+<div style="text-align:center;margin-top:10px">
+<button onclick="resetSemuaPIN()" style="background:#FF9800;color:white;border:none;padding:10px 16px;border-radius:20px;font-weight:bold;cursor:pointer">🔄 Reset Semua PIN Guru Jadi 1234</button>
+<button onclick="gantiPINkepsek()" style="background:#C62828;color:white;border:none;padding:10px 16px;border-radius:20px;font-weight:bold;cursor:pointer">🔐 Ganti PIN Kepala Sekolah</button>
+</div>
+</div>
+
+<div class="card galeri-wrap" id="galeri">
+<div class="banner-kartun">👩‍🏫👨‍🏫🏫📸🌈</div>
+<h3 style="text-align:center;color:#E65100;font-size:26px">📸 Galeri Kepala Sekolah, Guru & Staf 📸</h3>
+<p style="text-align:center">Kenalan yuk dengan Bapak / Ibu Guru hebat kami! <span id="jumlahGuru"></span> 🧑‍🏫👩‍🏫</p>
+<div class="lock-box" id="lockGuru">🔒 <b>Mode Pengunjung:</b> Pian hanya bisa melihat foto. Untuk ganti foto, Pian <b>klik</b> <b>🔐 Login Admin Guru</b> di atas.</div>
+<div class="hanya-admin" style="background:#C8E6C9;padding:10px;border-radius:10px;text-align:center;font-weight:bold;margin-bottom:12px">✅ Anda Login Sebagai Admin - Pian Bisa Ganti Foto Sekarang!</div>
+<div class="galeri" id="listGaleriGuru"></div>
+<div class="hanya-admin" style="text-align:center;margin-top:14px"><button onclick="simpanGaleri()" style="background:#4CAF50;color:white;border:none;padding:12px 22px;border-radius:20px;font-weight:bold;cursor:pointer">💾 SIMPAN SEMUA FOTO GURU</button></div>
+<p id="pesanGaleri" style="text-align:center;font-weight:bold;color:#2E7D32"></p>
+<p style="text-align:center;font-size:12px;color:#888">💡 Kalau Pian upload foto asli guru, fotonya yang muncul. Kalau belum upload, yang muncul kartun ceria dulu, tidak gelap lagi!</p>
+</div>
+
+<div class="card kegiatan-wrap" id="kegiatan">
+<div class="banner-kartun">🥁🎤⚽🌱🎨🎉</div>
+<h3 style="text-align:center;color:#2E7D32;font-size:26px">🎉📸 Galeri Kegiatan SDN Kayakah 📸🎉</h3>
+<p style="text-align:center">Foto Upacara, Pramuka, Habsy, Market Day, Senam, Kebun Sekolah, dan semua kegiatan seru! 🥁🎤⚽🌱</p>
+<div class="lock-box" id="lockKegiatan">🔒 <b>Mode Pengunjung:</b> Pian hanya bisa melihat foto kegiatan. Untuk tambah / hapus foto, Pian <b>klik</b> <b>🔐 Login Admin Guru</b> di atas.</div>
+<div class="hanya-admin" style="background:#C8E6C9;padding:10px;border-radius:10px;text-align:center;font-weight:bold;margin-bottom:12px">✅ Mode Admin Aktif - Pian Bisa Tambah & Hapus Foto Kegiatan!</div>
+<div style="text-align:center;margin-bottom:12px">
+<button onclick="filterKegiatan('SEMUA')" style="background:#4CAF50;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🌈 Semua</button>
+<button onclick="filterKegiatan('Upacara')" style="background:#FF5252;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">📚 Upacara</button>
+<button onclick="filterKegiatan('Pramuka')" style="background:#795548;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🥁 Pramuka</button>
+<button onclick="filterKegiatan('Habsy')" style="background:#9C27B0;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🎤 Habsy</button>
+<button onclick="filterKegiatan('Olahraga')" style="background:#2196F3;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">⚽ Olahraga</button>
+<button onclick="filterKegiatan('Lainnya')" style="background:#FF9800;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🎨 Lainnya</button>
+</div>
+<div class="kegiatan-grid" id="listKegiatan"></div>
+<div class="tambah-box hanya-admin" style="margin-top:14px">
+<h3 style="margin:0;color:#2E7D32">➕ TAMBAH FOTO KEGIATAN BARU - KHUSUS ADMIN</h3>
+<p style="font-size:13px;color:#666">Login sebagai: <b id="namaAdminDiForm">-</b></p>
+<input type="text" id="judulKegiatan" placeholder="📝 Judul Kegiatan - Contoh: Upacara Bendera Senin">
+<select id="kategoriKegiatan"><option value="Upacara">📚 Upacara / Senin</option><option value="Pramuka">🥁 Pramuka / Sabtu</option><option value="Habsy">🎤 Habsy / Hadrah / Minggu</option><option value="Olahraga">⚽ Olahraga / Senam / PJOK</option><option value="Lainnya">🎨 Lainnya - Market Day / Kebun / Komputer / Yasinan</option></select>
+<input type="text" id="ketKegiatan" placeholder="✏️ Keterangan - Contoh: Bersama Pak Wahyu & Bu Syahruni">
+<input type="file" id="fileKegiatan" accept="image/*">
+<button class="btn-tambah" onclick="tambahKegiatan()">📸 SIMPAN FOTO KEGIATAN</button>
+<p id="pesanKegiatan" style="font-weight:bold;color:#2E7D32"></p>
+</div>
+<div class="hanya-admin" style="text-align:center;margin-top:10px"><button onclick="hapusSemuaKegiatan()" style="background:#FF5252;color:white;border:none;padding:10px 18px;border-radius:20px;font-weight:bold;cursor:pointer">🗑️ Hapus Semua Foto Kegiatan</button></div>
+</div>
+
+<div class="card saran-wrap" id="saran">
+<div class="banner-kartun">💬📝🙏🌈</div>
+<h3 style="text-align:center;color:#1565C0;font-size:26px">💬📝 Kritik & Saran Untuk SDN Kayakah 📝💬</h3>
+<p style="text-align:center">Suara Pian sangat berharga untuk kemajuan sekolah kami!<br><b>Semua Pengunjung Boleh Isi - Tidak Perlu Login!</b></p>
+<div style="text-align:center;margin-bottom:12px">
+<button onclick="filterSaran('SEMUA')" style="background:#2196F3;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🌈 Semua (<span id="jmlSemua">0</span>)</button>
+<button onclick="filterSaran('Kritik')" style="background:#FF5252;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🔴 Kritik</button>
+<button onclick="filterSaran('Saran')" style="background:#4CAF50;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🟢 Saran / Pujian</button>
+<button onclick="filterSaran('Pertanyaan')" style="background:#FF9800;color:white;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;margin:3px">🟠 Pertanyaan</button>
+</div>
+<div class="saran-form">
+<h3 style="margin:0;color:#1565C0;text-align:center">✍️ Tulis Kritik & Saran Pian Di Sini</h3>
+<input type="text" id="saranNama" placeholder="👤 Nama Pian - Contoh: Ibu Ani / Ahmad Kelas 4">
+<select id="saranPeran"><option value="Orang Tua / Wali Murid">👨‍👩‍👧 Orang Tua / Wali Murid</option><option value="Siswa">🧒 Siswa SDN Kayakah</option><option value="Alumni">🎓 Alumni</option><option value="Masyarakat Desa Kayakah">🏡 Masyarakat Desa Kayakah</option><option value="Guru / Staf">👩‍🏫 Guru / Staf</option><option value="Tamu">👋 Tamu / Pengunjung</option></select>
+<select id="saranJenis"><option value="Saran">🟢 Saran / Pujian</option><option value="Kritik">🔴 Kritik</option><option value="Pertanyaan">🟠 Pertanyaan</option></select>
+<textarea id="saranIsi" placeholder="💬 Tulis kritik & saran Pian di sini..."></textarea>
+<button class="btn-saran" onclick="kirimSaran()">💬 KIRIM KRITIK & SARAN</button>
+<p id="pesanSaran" style="font-weight:bold;color:#2E7D32;text-align:center"></p>
+</div><br>
+<h3 style="color:#1565C0">📋 Semua Kritik & Saran Yang Masuk (<span id="jmlSaran">0</span>)</h3>
+<div class="hanya-admin" style="background:#FFF3E0;padding:10px;border-radius:10px;text-align:center;font-weight:bold;margin-bottom:12px">✅ Mode Admin: Pian Bisa Balas & Hapus Saran Yang Tidak Pantas!</div>
+<div id="listSaran"></div>
+<div class="hanya-admin" style="text-align:center;margin-top:10px"><button onclick="hapusSemuaSaran()" style="background:#FF5252;color:white;border:none;padding:10px 18px;border-radius:20px;font-weight:bold;cursor:pointer">🗑️ Hapus Semua Kritik & Saran (Admin)</button></div>
+</div>
+
+<div class="card kuis-warna" id="kuis">
+<div class="banner-kartun">🎮🧩🎲🌈🏆</div>
+<h3 style="text-align:center;color:#FF4081;font-size:26px">🌈🎮 KUIS SERU WARNA-WARNI + SUARA 🎮🌈</h3>
+<p style="text-align:center">Jawaban betul diacak 2x! Kadang atas, kadang tengah, kadang bawah! 🧩🎲</p>
+<div style="text-align:center"><button onclick="toggleSuara()" id="tombolSuara" style="width:auto;padding:10px 18px;background:#FF4081;color:white;border:none;border-radius:20px;font-weight:bold;cursor:pointer">🔊 SUARA: ON - Klik untuk Matikan</button></div><br>
+<div class="kartu" id="menuKelas"><div style="text-align:center;font-size:50px">🎓 📚 🧮 🔬</div><h2>🎓 Kuis Anak SD</h2><p class="sekolah">SD Negeri Kayakah<br>Amuntai Selatan</p><p style="text-align:center">1. Pilih Kelas Kamu:</p><button class="k1" onclick="pilihKelas(1)">📚 KELAS 1 - Merah</button><button class="k2" onclick="pilihKelas(2)">📚 KELAS 2 - Oranye</button><button class="k3" onclick="pilihKelas(3)">📚 KELAS 3 - Kuning</button><button class="k4" onclick="pilihKelas(4)">📚 KELAS 4 - Hijau</button><button class="k5" onclick="pilihKelas(5)">📚 KELAS 5 - Biru</button><button class="k6" onclick="pilihKelas(6)">📚 KELAS 6 - Ungu</button></div>
+<div class="kartu" id="menuMapel" style="display:none"><h2 id="judulMapel">🎓 Pilih Pelajaran</h2><p class="sekolah">SD Negeri Kayakah - Amuntai Selatan</p><p style="text-align:center">2. Pilih Pelajaran:</p><button class="m-semua" onclick="mulai('SEMUA')">✨🌈 SEMUA PELAJARAN</button><button class="m-mtk" onclick="mulai('MTK')">🔢 MATEMATIKA</button><button class="m-ipa" onclick="mulai('IPA')">🔬 IPA</button><button class="m-indo" onclick="mulai('BINDO')">📖 BAHASA INDONESIA</button><button class="m-agama" onclick="mulai('AGAMA')">🕌 AGAMA ISLAM</button><button class="m-pjok" onclick="mulai('PJOK')">⚽ PJOK</button><button class="m-pramuka" onclick="mulai('PRAMUKA')">🏕️ PRAMUKA</button><button class="m-pkn" onclick="mulai('PKN')">🇮🇩 PKn / IPS</button><button class="m-inggris" onclick="mulai('INGGRIS')">🇬🇧 BAHASA INGGRIS</button><button class="btn-abu" onclick="kembaliKelas()">⬅️ Ganti Kelas</button></div>
+<div class="kartu" id="game" style="display:none"><h2 id="judulKelas">🎓 Kuis Anak SD</h2><p class="sekolah">SD Negeri Kayakah - Amuntai Selatan</p><p id="poin">Poin: 0 | Soal: 1/10</p><p id="soal"></p><div id="pilihan"></div><div id="confetti"></div><p id="hasil"></p><button class="btn-abu" onclick="kembaliMapel()">⬅️ Ganti Pelajaran</button></div>
+</div>
+
+<div class="card peng-card"><div class="banner-kartun">📢🎉📚</div><h3>📢 Pengumuman Sekolah</h3><ul><li>📚 <b>Senin:</b> Upacara Bendera - Jam 07.30 WITA</li><li>🕌 <b>Jumat:</b> Yasinan, Infaq, dan Tahsin - Jam 07.30 WITA</li><li>🥁 <b>Sabtu:</b> Pramuka Kelas 4, 5, 6 - Jam 15.00 WITA</li><li>💻 <b>Selasa, Rabu, Kamis:</b> Ekstra Komputer - Jam 13.00 WITA</li><li>🎤 <b>Minggu:</b> Habsy / Hadrah - Jam 08.30 WITA</li></ul></div>
+<div class="stats"><div class="c1"><b>60</b>😊 Siswa Hebat</div><div class="c2"><b>6</b>📚 Kelas Ceria</div><div class="c3"><b>8</b>👩‍🏫 Guru & Staf</div><div class="c4"><b>1976</b>🏫 Berdiri</div></div>
+<div class="card" id="profil"><div class="banner-kartun">🏫🌈📚</div><h3>📚 Profil Sekolah Kita</h3><table><tr><td>🏫 Nama Sekolah</td><td>SD Negeri Kayakah</td></tr><tr><td>📍 Alamat</td><td>Jl. Pertahanan Divisi IV No. 029 RT.004, Desa Kayakah, Kec. Amuntai Selatan, Kab. Hulu Sungai Utara, Kalimantan Selatan 71452</td></tr><tr><td>🆔 NPSN / NSS</td><td>30302788 / 101150702012</td></tr><tr><td>🎂 Tahun Berdiri</td><td>1976</td></tr><tr><td>👧👦 Jumlah Siswa</td><td>60 Siswa (30 Laki-laki, 30 Perempuan)</td></tr><tr><td>📖 Rombel</td><td>6 Rombel - Kelas I s.d VI</td></tr></table></div>
+<div class="card" id="guru"><div class="banner-kartun">👩‍🏫👨‍🏫❤️</div><h3>👩‍🏫 Guru & Staf Hebat Kami</h3><div class="guru" id="listGuruProfil"></div><p style="margin-top:12px">📖 Pembimbing Tahsin & Tahfiz: <b>Syahida Norpah</b> dan <b>Jannah</b><br>🤝 Ketua Komite: <b>H. M. Husni</b></p></div>
+<div class="card" id="ekstra"><div class="banner-kartun">🥁🎤💻🌱⚽🛍️</div><h3>🎨 Kegiatan Seru di Sekolah!</h3><div class="ekstra"><span>🥁 Pramuka - Sabtu</span><span>🎤 Habsy / Hadrah - Minggu</span><span>💻 Komputer - Selasa, Rabu, Kamis</span><span>📖 Tahsin & Tahfiz</span><span>🌱 Kebun Sekolah</span><span>⚽ Senam Sehat</span><span>🛍️ Market Day</span></div></div>
+<div class="card" id="kontak"><div class="banner-kartun">📞🏫💬</div><h3>📞 Yuk, Hubungi Kami!</h3><p><b>📍 Alamat:</b> Jl. Pertahanan Divisi IV No. 029 RT.004, Desa Kayakah, Kec. Amuntai Selatan, Kab. Hulu Sungai Utara 71452</p><p><b>👨‍🏫 Plt. Kepala Sekolah:</b> Wahyu Aji, S.Pd.Jas</p><p><b>🤝 Ketua Komite:</b> H. M. Husni</p></div>
+</div>
+<footer><div style="font-size:36px">🏫 🌈 📚 🎨 ⚽ 🎤 🥁 💻 🌱</div>© 2026 SDN Kayakah - Amuntai Selatan 🌈<br>Belajar Ceria, Berkarakter, Berprestasi!</footer>
+
+<script>
+let adminLogin = null;
+let NAMA_KEPSEK = "Wahyu Aji, S.Pd.Jas";
+let daftarPIN = {}; let jabatanAdmin = {}; let fotoGuru = {};
+let kartunGuru = {"Wahyu Aji, S.Pd.Jas":"👨‍🏫","Samsul Bahri, S.Pd":"👨‍🏫","Syahruni, S.Pd.SD":"👩‍🏫","Norsalim, S.Pd":"👨‍🏫","Hj. Siti Nuriyah, S.Pd.SD":"👩‍🏫","Radinah, S.Pd":"👩‍🏫","Pathuljannah, S.Pd.I":"👩‍🏫","Husain":"🧑‍💻","Syahida Norpah":"📖","Jannah":"📖"};
+let warnaGuru = ["#FFEBEE","#FFF3E0","#E3F2FD","#E8F5E9","#F3E5F5","#FFFDE7","#E0F7FA","#FCE4EC","#FFF8E1","#EDE7F6"];
+function loadPIN(){
+  let def = {"Wahyu Aji, S.Pd.Jas":"1976","Samsul Bahri, S.Pd":"1234","Syahruni, S.Pd.SD":"1234","Norsalim, S.Pd":"1234","Hj. Siti Nuriyah, S.Pd.SD":"1234","Radinah, S.Pd":"1234","Pathuljannah, S.Pd.I":"1234","Husain":"1234","Syahida Norpah":"1234","Jannah":"1234"};
+  let defJab = {"Wahyu Aji, S.Pd.Jas":"Plt. Kepala Sekolah / Guru PJOK","Samsul Bahri, S.Pd":"Guru Kelas","Syahruni, S.Pd.SD":"Guru Kelas","Norsalim, S.Pd":"Guru Kelas","Hj. Siti Nuriyah, S.Pd.SD":"Guru Kelas","Radinah, S.Pd":"Guru Kelas","Pathuljannah, S.Pd.I":"Guru PAI","Husain":"Operator Sekolah","Syahida Norpah":"Pembimbing Tahsin & Tahfiz","Jannah":"Pembimbing Tahsin & Tahfiz"};
+  try{ let s=localStorage.getItem("pin_kayakah"); let j=localStorage.getItem("jabatan_kayakah"); let f=localStorage.getItem("foto_guru_kayakah"); daftarPIN=s?JSON.parse(s):def; jabatanAdmin=j?JSON.parse(j):defJab; fotoGuru=f?JSON.parse(f):{}; }catch(e){ daftarPIN=def; jabatanAdmin=defJab; fotoGuru={}; }
+  if(!daftarPIN[NAMA_KEPSEK]) daftarPIN[NAMA_KEPSEK]="1976";
+}
+function simpanPIN(){ localStorage.setItem("pin_kayakah",JSON.stringify(daftarPIN)); localStorage.setItem("jabatan_kayakah",JSON.stringify(jabatanAdmin)); localStorage.setItem("foto_guru_kayakah",JSON.stringify(fotoGuru)); }
+function isiDropdownLogin(){ let sel=document.getElementById("loginNama"); sel.innerHTML=""; Object.keys(daftarPIN).forEach(nama=>{ let opt=document.createElement("option"); opt.value=nama; opt.textContent=(nama===NAMA_KEPSEK?"👑 ":"👩‍🏫 ")+nama+" - "+(jabatanAdmin[nama]||"Guru"); sel.appendChild(opt); }); }
+function bukaLogin(){ isiDropdownLogin(); document.getElementById("modalLogin").style.display="flex"; document.getElementById("loginError").innerHTML=""; }
+function tutupLogin(){ document.getElementById("modalLogin").style.display="none"; }
+function cekLogin(){ let nama=document.getElementById("loginNama").value; let pin=document.getElementById("loginPIN").value.trim(); if(daftarPIN[nama] && pin===daftarPIN[nama]){ adminLogin=nama; try{localStorage.setItem("admin_kayakah",nama);}catch(e){} updateTampilanAdmin(); tutupLogin(); alert("Selamat Datang, "+nama+"! ✅"); document.getElementById("galeri").scrollIntoView({behavior:"smooth"}); } else { document.getElementById("loginError").innerHTML="❌ PIN Salah! Hubungi Kepala Sekolah!"; } }
+function logoutAdmin(){ adminLogin=null; localStorage.removeItem("admin_kayakah"); updateTampilanAdmin(); alert("Pian Sudah Keluar Dari Mode Admin 🔒"); }
+function updateTampilanAdmin(){ if(adminLogin){ document.body.classList.add("admin"); if(adminLogin===NAMA_KEPSEK) document.body.classList.add("kepsek"); else document.body.classList.remove("kepsek"); document.getElementById("adminStatus").innerHTML=adminLogin===NAMA_KEPSEK?"👑 Login Sebagai KEPALA SEKOLAH: <b>"+adminLogin+"</b>":"✅ Login Sebagai Admin: <b>"+adminLogin+"</b>"; document.getElementById("btnLoginTop").style.display="none"; document.getElementById("btnLogoutTop").style.display="inline-block"; document.getElementById("lockGuru").style.display="none"; document.getElementById("lockKegiatan").style.display="none"; document.getElementById("namaAdminDiForm").innerHTML=adminLogin; if(adminLogin===NAMA_KEPSEK) tampilTabelPIN(); } else { document.body.classList.remove("admin"); document.body.classList.remove("kepsek"); document.getElementById("adminStatus").innerHTML="👀 Mode Pengunjung - Hanya Melihat Galeri"; document.getElementById("btnLoginTop").style.display="inline-block"; document.getElementById("btnLogoutTop").style.display="none"; document.getElementById("lockGuru").style.display="block"; document.getElementById("lockKegiatan").style.display="block"; } renderGaleriGuru(); tampilKegiatan(); tampilSaran(); }
+function wajibAdmin(){ if(!adminLogin){ alert("🔒 Hanya Admin yang bisa! Klik 🔐 Login Admin Guru di atas!"); bukaLogin(); return false; } return true; }
+function wajibKepsek(){ if(adminLogin!==NAMA_KEPSEK){ alert("🔒 Hanya Kepala Sekolah!"); return false; } return true; }
+function renderGaleriGuru(){
+  let wadah=document.getElementById("listGaleriGuru"); if(!wadah) return;
+  let names=Object.keys(daftarPIN); names.sort((a,b)=>{ if(a===NAMA_KEPSEK) return -1; if(b===NAMA_KEPSEK) return 1; return a.localeCompare(b); });
+  document.getElementById("jumlahGuru").innerHTML="("+names.length+" Orang)";
+  let html="";
+  names.forEach((nama,idx)=>{
+    let isKepsek=nama===NAMA_KEPSEK; let warna=warnaGuru[idx%warnaGuru.length]; let emoji=kartunGuru[nama]||"👩‍🏫"; let jab=jabatanAdmin[nama]||"Guru / Staf";
+    let fotoHtml = fotoGuru[nama] ? `<img src="${fotoGuru[nama]}" style="width:100%;height:170px;object-fit:cover;display:block">` : `<div class="foto-kartun" style="background:${warna}">${emoji}</div>`;
+    if(isKepsek && fotoGuru[nama]) fotoHtml=`<img src="${fotoGuru[nama]}" style="width:100%;height:200px;object-fit:cover;display:block">`;
+    let tombol = adminLogin ? `<br><input type="file" id="input-${idx}" accept="image/*" style="display:none" onchange="gantiFotoBaru(this,'${nama.replace(/'/g,"")}')"><button class="g-btn" onclick="document.getElementById('input-${idx}').click()">📸 Ganti Foto Asli</button>` : ``;
+    let tombolHapus = (adminLogin===NAMA_KEPSEK && !isKepsek) ? `<br><button onclick="hapusSatuAdmin('${nama.replace(/'/g,"")}')" style="background:#FF5252;color:white;border:none;padding:6px 12px;border-radius:15px;font-weight:bold;cursor:pointer;font-size:12px;margin-top:4px">🗑️ Hapus Guru Ini</button>` : ``;
+    html+=`<div class="g-card ${isKepsek?"kepsek":""}">${fotoHtml}<b>${isKepsek?"👑 ":""}${nama}</b><span>${jab}</span>${tombol}${tombolHapus}</div>`;
+  });
+  wadah.innerHTML=html;
+  let profil=document.getElementById("listGuruProfil"); if(profil){ let hp=""; names.forEach(nama=>{ hp+=`<div>${nama===NAMA_KEPSEK?"👨‍🏫 ":"👩‍🏫 "}<b>${nama}</b><br>${jabatanAdmin[nama]||""}</div>`; }); profil.innerHTML=hp; }
+}
+function gantiFotoBaru(input,nama){ if(!wajibAdmin()){input.value="";return;} let file=input.files[0]; if(!file) return; let reader=new FileReader(); reader.onload=function(e){ fotoGuru[nama]=e.target.result; simpanPIN(); renderGaleriGuru(); document.getElementById("pesanGaleri").innerHTML="✅ Foto "+nama+" berhasil diganti!"; }; reader.readAsDataURL(file); }
+function simpanGaleri(){ if(!wajibAdmin()) return; simpanPIN(); alert("Foto Berhasil Disimpan!"); }
+function tampilTabelPIN(){ let wadah=document.getElementById("tabelPIN"); if(!wadah) return; let html=`<table><tr><td><b>Nama</b></td><td><b>Jabatan</b></td><td><b>PIN</b></td><td><b>Aksi</b></td></tr>`; Object.keys(daftarPIN).forEach(nama=>{ html+=`<tr><td>${nama}${nama===NAMA_KEPSEK?" 👑":""}</td><td>${jabatanAdmin[nama]||""}</td><td><input type="text" id="pin-${nama}" value="${daftarPIN[nama]}" style="width:80px;text-align:center"></td><td><button onclick="simpanSatuPIN('${nama.replace(/'/g,"")}')" style="background:#4CAF50;color:white;border:none;padding:6px 10px;border-radius:8px;font-weight:bold;cursor:pointer">💾 Simpan</button> <button onclick="hapusSatuAdmin('${nama.replace(/'/g,"")}')" style="background:#FF5252;color:white;border:none;padding:6px 10px;border-radius:8px;font-weight:bold;cursor:pointer">🗑️</button></td></tr>`; }); html+=`</table>`; wadah.innerHTML=html; }
+function simpanSatuPIN(nama){ if(!wajibKepsek()) return; let baru=document.getElementById("pin-"+nama).value.trim(); if(!baru||baru.length<4){alert("PIN minimal 4 angka!");return;} daftarPIN[nama]=baru; simpanPIN(); tampilTabelPIN(); alert("PIN "+nama+" jadi: "+baru); }
+function hapusSatuAdmin(nama){ if(!wajibKepsek()) return; if(nama===NAMA_KEPSEK){alert("Kepsek tidak bisa dihapus!");return;} if(!confirm("Hapus guru "+nama+"?")) return; delete daftarPIN[nama]; delete jabatanAdmin[nama]; delete fotoGuru[nama]; simpanPIN(); tampilTabelPIN(); isiDropdownLogin(); renderGaleriGuru(); alert("Guru "+nama+" sudah dihapus!"); }
+function tambahAdminBaru(){ if(!wajibKepsek()) return; let nama=document.getElementById("namaBaru").value.trim(); let pin=document.getElementById("pinBaru").value.trim(); let jab=document.getElementById("jabatanBaru").value.trim()||"Guru / Staf"; let fileInput=document.getElementById("fotoBaru"); if(!nama||!pin){alert("Isi Nama & PIN dulu!");return;} if(pin.length<4){alert("PIN minimal 4 angka!");return;} if(daftarPIN[nama]){alert("Nama sudah ada!");return;} function selesai(fotoData){ daftarPIN[nama]=pin; jabatanAdmin[nama]=jab; if(fotoData) fotoGuru[nama]=fotoData; if(!kartunGuru[nama]) kartunGuru[nama]="👩‍🏫"; simpanPIN(); document.getElementById("namaBaru").value=""; document.getElementById("pinBaru").value=""; document.getElementById("jabatanBaru").value=""; fileInput.value=""; tampilTabelPIN(); isiDropdownLogin(); renderGaleriGuru(); alert("BERHASIL! Nama: "+nama+" PIN: "+pin); document.getElementById("galeri").scrollIntoView({behavior:"smooth"}); } if(fileInput.files[0]){ let r=new FileReader(); r.onload=function(e){selesai(e.target.result);}; r.readAsDataURL(fileInput.files[0]); } else selesai(null); }
+function resetSemuaPIN(){ if(!wajibKepsek()) return; if(!confirm("Reset semua PIN jadi 1234?")) return; Object.keys(daftarPIN).forEach(n=>{ if(n!==NAMA_KEPSEK) daftarPIN[n]="1234"; }); simpanPIN(); tampilTabelPIN(); alert("Semua PIN jadi 1234!"); }
+function gantiPINkepsek(){ if(!wajibKepsek()) return; let baru=prompt("PIN BARU Kepsek:",daftarPIN[NAMA_KEPSEK]); if(!baru) return; baru=baru.trim(); if(baru.length<4){alert("Minimal 4 angka!");return;} daftarPIN[NAMA_KEPSEK]=baru; simpanPIN(); tampilTabelPIN(); alert("PIN Kepsek jadi: "+baru); }
+let filterAktif="SEMUA"; let dataKegiatan=[];
+function loadKegiatan(){ try{ dataKegiatan=JSON.parse(localStorage.getItem("kegiatan_kayakah")||"[]"); }catch(e){ dataKegiatan=[]; } if(dataKegiatan.length===0){ dataKegiatan=[{judul:"Upacara Bendera Senin",kat:"Upacara",ket:"Bersama Pak Wahyu & Semua Guru",emoji:"📚🇮🇩",oleh:"Admin"},{judul:"Pramuka Sabtu Sore",kat:"Pramuka",ket:"Kelas 4, 5, 6 - Latihan Baris Berbaris",emoji:"🥁🏕️",oleh:"Admin"},{judul:"Habsy / Hadrah Minggu",kat:"Habsy",ket:"Tim Habsy SDN Kayakah",emoji:"🎤🥁",oleh:"Admin"},{judul:"Senam Sehat Pagi",kat:"Olahraga",ket:"Senam Bersama Guru & Siswa",emoji:"⚽🏃",oleh:"Admin"},{judul:"Market Day",kat:"Lainnya",ket:"Anak-anak Belajar Jualan",emoji:"🛍️🍰",oleh:"Admin"},{judul:"Kebun Sekolah",kat:"Lainnya",ket:"Menanam Bersama Bu Guru",emoji:"🌱🥬",oleh:"Admin"}]; } tampilKegiatan(); }
+function tampilKegiatan(){ let wadah=document.getElementById("listKegiatan"); if(!wadah) return; let html=""; dataKegiatan.forEach((k,i)=>{ if(filterAktif!=="SEMUA" && k.kat!==filterAktif) return; let emoji=k.emoji||(k.kat==="Upacara"?"📚":k.kat==="Pramuka"?"🥁":k.kat==="Habsy"?"🎤":k.kat==="Olahraga"?"⚽":"🎨"); let gambar = k.foto ? `<img src="${k.foto}" onclick="window.open('${k.foto}','_blank')">` : `<div class="k-kartun">${emoji}</div>`; let tombolHapus=adminLogin?`<br><button class="k-del" onclick="hapusKegiatan(${i})">🗑️ Hapus Foto Ini</button>`:""; html+=`<div class="k-card">${gambar}<b>${k.judul}</b><span>${k.kat} • ${k.ket||""}<br>👤 Oleh: ${k.oleh||"Admin"}</span>${tombolHapus}</div>`; }); if(html==="") html=`<div style="grid-column:1/-1;text-align:center;padding:20px;background:#fff;border-radius:12px">Belum ada foto. Admin bisa tambah! 👇</div>`; wadah.innerHTML=html; }
+function filterKegiatan(kat){ filterAktif=kat; tampilKegiatan(); }
+function tambahKegiatan(){ if(!wajibAdmin()) return; let judul=document.getElementById("judulKegiatan").value.trim(); let kat=document.getElementById("kategoriKegiatan").value; let ket=document.getElementById("ketKegiatan").value.trim(); let fileInput=document.getElementById("fileKegiatan"); if(!judul){alert("Isi Judul dulu!");return;} if(!fileInput.files[0]){alert("Pilih fotonya dulu!");return;} let reader=new FileReader(); reader.onload=function(e){ let emoji=kat==="Upacara"?"📚🇮🇩":kat==="Pramuka"?"🥁🏕️":kat==="Habsy"?"🎤🥁":kat==="Olahraga"?"⚽🏃":"🎨🌈"; dataKegiatan.unshift({judul:judul,kat:kat,ket:ket,foto:e.target.result,emoji:emoji,oleh:adminLogin}); try{localStorage.setItem("kegiatan_kayakah",JSON.stringify(dataKegiatan));}catch(err){alert("Fotonya kebesaran!");return;} document.getElementById("judulKegiatan").value=""; document.getElementById("ketKegiatan").value=""; fileInput.value=""; document.getElementById("pesanKegiatan").innerHTML="✅ Foto Berhasil Ditambah!"; filterAktif="SEMUA"; tampilKegiatan(); document.getElementById("kegiatan").scrollIntoView({behavior:"smooth"}); }; reader.readAsDataURL(fileInput.files[0]); }
+function hapusKegiatan(i){ if(!wajibAdmin()) return; if(!confirm("Hapus foto ini?")) return; dataKegiatan.splice(i,1); localStorage.setItem("kegiatan_kayakah",JSON.stringify(dataKegiatan)); tampilKegiatan(); }
+function hapusSemuaKegiatan(){ if(!wajibAdmin()) return; if(!confirm("Hapus SEMUA?")) return; dataKegiatan=[]; localStorage.removeItem("kegiatan_kayakah"); loadKegiatan(); }
+let dataSaran=[]; let filterSaranAktif="SEMUA";
+function loadSaran(){ try{ dataSaran=JSON.parse(localStorage.getItem("saran_kayakah")||"[]"); }catch(e){ dataSaran=[]; } if(dataSaran.length===0){ dataSaran=[{nama:"Ibu Ani - Orang Tua Murid",peran:"Orang Tua / Wali Murid",jenis:"Saran",isi:"Terima kasih Bapak / Ibu Guru, anak Ulun sekarang rajin belajar dan rajin mengaji. Semoga SDN Kayakah makin maju! 🙏",tanggal:"14 Nov 2026",balas:"Terima kasih Ibu Ani! 🙏 - Pak Wahyu"},{nama:"Ahmad - Siswa Kelas 5",peran:"Siswa",jenis:"Saran",isi:"Pak, tolong ditambah bola sepak di sekolah ya, bola yang lama sudah bocor. Terima kasih!",tanggal:"14 Nov 2026",balas:"Siap Ahmad! Nanti Bapak usahakan beli bola baru ya! ⚽ - Pak Wahyu"},{nama:"Warga Desa Kayakah",peran:"Masyarakat Desa Kayakah",jenis:"Pertanyaan",isi:"Kapan pendaftaran siswa baru dibuka? Anak Ulun mau masuk Kelas 1 tahun depan.",tanggal:"14 Nov 2026",balas:""}]; localStorage.setItem("saran_kayakah",JSON.stringify(dataSaran)); } tampilSaran(); }
+function kirimSaran(){ let nama=document.getElementById("saranNama").value.trim()||"Hamba Allah (Anonim)"; let peran=document.getElementById("saranPeran").value; let jenis=document.getElementById("saranJenis").value; let isi=document.getElementById("saranIsi").value.trim(); if(!isi||isi.length<5){alert("Tulis dulu sarannya!");return;} let tgl=new Date().toLocaleDateString("id-ID",{day:"numeric",month:"short",year:"numeric"}); dataSaran.unshift({nama:nama,peran:peran,jenis:jenis,isi:isi,tanggal:tgl,balas:""}); localStorage.setItem("saran_kayakah",JSON.stringify(dataSaran)); document.getElementById("saranNama").value=""; document.getElementById("saranIsi").value=""; document.getElementById("pesanSaran").innerHTML="✅ Terima Kasih! Saran Pian Sudah Terkirim!"; filterSaranAktif="SEMUA"; tampilSaran(); }
+function filterSaran(jenis){ filterSaranAktif=jenis; tampilSaran(); }
+function tampilSaran(){ let wadah=document.getElementById("listSaran"); if(!wadah) return; document.getElementById("jmlSaran").innerHTML=dataSaran.length; document.getElementById("jmlSemua").innerHTML=dataSaran.length; let html=""; dataSaran.forEach((s,i)=>{ if(filterSaranAktif!=="SEMUA" && s.jenis!==filterSaranAktif) return; let kelas=s.jenis==="Kritik"?"saran-kritik":s.jenis==="Saran"?"saran-puji":"saran-tanya"; let chipWarna=s.jenis==="Kritik"?"#FF5252":s.jenis==="Saran"?"#4CAF50":"#FF9800"; let chipEmoji=s.jenis==="Kritik"?"🔴":s.jenis==="Saran"?"🟢":"🟠"; let balasHtml=s.balas?`<div class="balas-box">💬 <b>Balasan Sekolah:</b><br>${s.balas}</div>`:`<div style="font-size:12px;color:#888;margin-top:6px">⏳ Belum dibalas</div>`; let tombolAdmin=""; if(adminLogin){ tombolAdmin=`<div style="margin-top:10px"><input type="text" id="balas-${i}" placeholder="Tulis balasan..." style="width:100%;padding:8px;border:1px solid #ccc;border-radius:8px"><button onclick="balasSaran(${i})" style="background:#4CAF50;color:white;border:none;padding:8px 14px;border-radius:15px;font-weight:bold;cursor:pointer;margin-top:6px">💬 Balas</button> <button onclick="hapusSaran(${i})" style="background:#FF5252;color:white;border:none;padding:8px 14px;border-radius:15px;font-weight:bold;cursor:pointer;margin-top:6px">🗑️ Hapus</button></div>`; } html+=`<div class="saran-item ${kelas}"><span class="chip" style="background:${chipWarna}">${chipEmoji} ${s.jenis}</span><span style="font-size:12px;color:#888">${s.tanggal} • ${s.peran}</span><br><b>👤 ${s.nama}</b><p style="margin:8px 0;line-height:1.6">${s.isi}</p>${balasHtml}${tombolAdmin}</div>`; }); if(html==="") html=`<div style="text-align:center;padding:20px;background:#fff;border-radius:12px">Belum ada saran. Jadilah yang pertama! 👆</div>`; wadah.innerHTML=html; }
+function balasSaran(i){ if(!wajibAdmin()) return; let teks=document.getElementById("balas-"+i).value.trim(); if(!teks){alert("Tulis balasannya!");return;} dataSaran[i].balas=teks+" - "+adminLogin; localStorage.setItem("saran_kayakah",JSON.stringify(dataSaran)); tampilSaran(); }
+function hapusSaran(i){ if(!wajibAdmin()) return; if(!confirm("Hapus saran ini?")) return; dataSaran.splice(i,1); localStorage.setItem("saran_kayakah",JSON.stringify(dataSaran)); tampilSaran(); }
+function hapusSemuaSaran(){ if(!wajibAdmin()) return; if(!confirm("Hapus SEMUA?")) return; dataSaran=[]; localStorage.removeItem("saran_kayakah"); loadSaran(); }
+window.addEventListener("load",function(){ loadPIN(); let a=localStorage.getItem("admin_kayakah"); if(a && daftarPIN[a]) adminLogin=a; updateTampilanAdmin(); renderGaleriGuru(); loadKegiatan(); loadSaran(); });
+let soal=[], idx=0, poin=0, kelasAktif=1, mapelAktif='SEMUA'; let suaraOn=true; let audioCtx=null;
+function getAudio(){ if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)(); if(audioCtx.state==='suspended') audioCtx.resume(); return audioCtx; }
+function toggleSuara(){ suaraOn=!suaraOn; document.getElementById("tombolSuara").innerHTML=suaraOn?"🔊 SUARA: ON - Klik untuk Matikan":"🔇 SUARA: OFF - Klik untuk Hidupkan"; if(suaraOn) mainTepukTangan(); }
+function bunyi(f,d,t,v,dl){ if(!suaraOn) return; try{ let ctx=getAudio(); let o=ctx.createOscillator(); let g=ctx.createGain(); o.type=t||"sine"; o.frequency.value=f; g.gain.setValueAtTime(v||0.15,ctx.currentTime+dl); g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+dl+d); o.connect(g); g.connect(ctx.destination); o.start(ctx.currentTime+dl); o.stop(ctx.currentTime+dl+d); }catch(e){} }
+function tepukSekali(dl){ if(!suaraOn) return; try{ let ctx=getAudio(); let len=ctx.sampleRate*0.08; let buf=ctx.createBuffer(1,len,ctx.sampleRate); let dd=buf.getChannelData(0); for(let i=0;i<len;i++) dd[i]=(Math.random()*2-1)*(1-i/len); let src=ctx.createBufferSource(); src.buffer=buf; let g=ctx.createGain(); g.gain.value=0.35; let f=ctx.createBiquadFilter(); f.type="bandpass"; f.frequency.value=1800; src.connect(f); f.connect(g); g.connect(ctx.destination); src.start(ctx.currentTime+dl); }catch(e){} }
+function mainTepukTangan(){ if(!suaraOn) return; for(let i=0;i<6;i++) tepukSekali(i*0.13); bunyi(880,0.3,"sine",0.2,0.1); bunyi(1100,0.4,"sine",0.2,0.35); bunyi(1320,0.5,"sine",0.2,0.6); }
+function mainSalah(){ if(!suaraOn) return; bunyi(220,0.3,"sawtooth",0.12,0); bunyi(180,0.4,"sawtooth",0.12,0.25); }
+function mainSelesaiHebat(){ if(!suaraOn) return; for(let i=0;i<8;i++) tepukSekali(i*0.12); [523,659,784,1046].forEach((f,i)=>bunyi(f,0.4,"sine",0.18,i*0.15)); }
+function acak(a){ let b=[...a]; for(let i=b.length-1;i>0;i--){ let j=Math.floor(Math.random()*(i+1)); let t=b[i]; b[i]=b[j]; b[j]=t; } return b; }
+function acakSatuSoal(s){ let u=[0,1,2]; for(let i=u.length-1;i>0;i--){ let j=Math.floor(Math.random()*(i+1)); let tmp=u[i]; u[i]=u[j]; u[j]=tmp; } let pBaru=[]; for(let k=0;k<3;k++) pBaru.push(s.p[u[k]]); return {q:s.q,p:pBaru,j:u.indexOf(s.j)}; }
+function acakJawaban(l){ return l.map(s=>acakSatuSoal(s)); }
+function ulang(d,n=80){ let b=[]; for(let i=0;i<n;i++) b.push(...d); return b; }
+function bankMTK(kelas){ let b=[]; let max=kelas<=2?30:kelas<=4?100:500; for(let a=1;a<=max;a++) for(let c=1;c<=20;c++){ b.push({q:`${a} + ${c} = ?`,p:[`${a+c}`,`${a+c+2}`,`${a+c-2}`],j:0}); if(a>c) b.push({q:`${a} - ${c} = ?`,p:[`${a-c}`,`${a-c+1}`,`${a-c-1}`],j:0}); if(c<=12) b.push({q:`${a} x ${c} = ?`,p:[`${a*c}`,`${a*c+5}`,`${a*c-5}`],j:0}); } return b; }
+function bankIPA(kelas){ let d=[{q:"Bagian tumbuhan menyerap air?",p:["Daun","Akar","Bunga"],j:1},{q:"Sumber energi utama bumi?",p:["Bulan","Matahari","Bintang"],j:1},{q:"Alat ukur suhu?",p:["Penggaris","Termometer","Timbangan"],j:1},{q:"Benda ditarik magnet?",p:["Kayu","Besi","Kertas"],j:1},{q:"Organ untuk bernapas?",p:["Jantung","Paru-paru","Lambung"],j:1}]; return ulang(d,80); }
+function bankBindo(kelas){ let d=[{q:"Lawan kata 'tinggi'?",p:["rendah","tinggi","bagus"],j:0},{q:"Pantun ada berapa baris?",p:["2","4","6"],j:1},{q:"Jumlah huruf abjad?",p:["26","24","28"],j:0}]; return ulang(d,80); }
+function bankAgama(kelas){ let d=[{q:"Kitab suci umat Islam?",p:["Injil","Al-Quran","Taurat"],j:1},{q:"Rukun Islam ada?",p:["5","6","4"],j:0},{q:"Puasa di bulan?",p:["Syawal","Ramadhan","Dzulhijjah"],j:1},{q:"Shalat Subuh berapa rakaat?",p:["2","4","3"],j:0}]; return ulang(d,80); }
+function bankPJOK(kelas){ let d=[{q:"Sebelum olahraga harus?",p:["Pemanasan","Tidur","Makan banyak"],j:0},{q:"Jumlah pemain sepak bola?",p:["11","9","7"],j:0},{q:"Olahraga membuat badan?",p:["Sehat","Sakit","Lemah"],j:0}]; return ulang(d,80); }
+function bankPramuka(kelas){ let d=[{q:"Dasa Darma ada?",p:["5","10","8"],j:1},{q:"Lambang Pramuka?",p:["Tunas Kelapa","Garuda","Banteng"],j:0},{q:"Hari Pramuka tanggal?",p:["14 Agustus","17 Agustus","20 Mei"],j:0}]; return ulang(d,80); }
+function bankPKN(kelas){ let d=[{q:"Sila pertama Pancasila?",p:["Ketuhanan Yang Maha Esa","Kemanusiaan","Persatuan"],j:0},{q:"Lambang negara Indonesia?",p:["Garuda Pancasila","Komodo","Banteng"],j:0},{q:"SD Negeri Kayakah berada di?",p:["Amuntai Tengah","Amuntai Selatan","Amuntai Utara"],j:1}]; return ulang(d,80); }
+function bankInggris(kelas){ let d=[{q:"Bahasa Inggrisnya 'kucing'?",p:["Cat","Dog","Book"],j:0},{q:"Good morning artinya?",p:["Selamat pagi","Selamat malam","Selamat siang"],j:0},{q:"Thank you artinya?",p:["Terima kasih","Selamat pagi","Maaf"],j:0}]; return ulang(d,80); }
+function pilihKelas(k){ kelasAktif=k; document.getElementById("menuKelas").style.display="none"; document.getElementById("menuMapel").style.display="block"; document.getElementById("judulMapel").innerHTML=`🎓 Kelas ${k} - Pilih Pelajaran`; }
+function kembaliKelas(){ document.getElementById("menuMapel").style.display="none"; document.getElementById("menuKelas").style.display="block"; }
+function kembaliMapel(){ document.getElementById("game").style.display="none"; document.getElementById("menuMapel").style.display="block"; }
+function mulai(mapel){ mapelAktif=mapel; let bank=[]; if(mapel==='MTK') bank=bankMTK(kelasAktif); else if(mapel==='IPA') bank=bankIPA(kelasAktif); else if(mapel==='BINDO') bank=bankBindo(kelasAktif); else if(mapel==='AGAMA') bank=bankAgama(kelasAktif); else if(mapel==='PJOK') bank=bankPJOK(kelasAktif); else if(mapel==='PRAMUKA') bank=bankPramuka(kelasAktif); else if(mapel==='PKN') bank=bankPKN(kelasAktif); else if(mapel==='INGGRIS') bank=bankInggris(kelasAktif); else bank=[...bankMTK(kelasAktif),...bankIPA(kelasAktif),...bankBindo(kelasAktif),...bankAgama(kelasAktif),...bankPJOK(kelasAktif),...bankPramuka(kelasAktif),...bankPKN(kelasAktif),...bankInggris(kelasAktif)]; soal=acakJawaban(acak(bank).slice(0,10)); idx=0; poin=0; document.getElementById("menuMapel").style.display="none"; document.getElementById("game").style.display="block"; let nama={MTK:'Matematika',IPA:'IPA',BINDO:'Bahasa Indonesia',AGAMA:'Agama Islam',PJOK:'PJOK',PRAMUKA:'Pramuka',PKN:'PKn / IPS',INGGRIS:'Bahasa Inggris',SEMUA:'Semua Pelajaran'}; document.getElementById("judulKelas").innerHTML=`🎓 Kelas ${kelasAktif} - ${nama[mapel]}`; tampil(); }
+function tampil(){ if(idx>=soal.length){ document.getElementById("soal").innerHTML="Selesai! 🎉"; document.getElementById("pilihan").innerHTML=`<button onclick="mulai('${mapelAktif}')">Main Lagi</button>`; document.getElementById("hasil").innerHTML=`Nilai Akhir: ${poin*10} / 100`; document.getElementById("hasil").className=poin>=80?"betul-bg":"salah-bg"; document.getElementById("confetti").innerHTML=poin>=80?"🏆🎉 HEBAT SEKALI!":"💪 SEMANGAT! COBA LAGI!"; document.getElementById("poin").innerHTML=`Poin: ${poin}`; if(poin>=80) mainSelesaiHebat(); return; } soal[idx]=acakSatuSoal(soal[idx]); document.getElementById("poin").innerHTML=`Poin: ${poin} | Soal: ${idx+1}/10`; document.getElementById("soal").innerHTML=`<b>${idx+1}. ${soal[idx].q}</b>`; document.getElementById("hasil").innerHTML=""; document.getElementById("hasil").className=""; document.getElementById("confetti").innerHTML=""; let html=""; soal[idx].p.forEach((pil,i)=>{ html+=`<button onclick="jawab(${i},this)">${pil}</button>`; }); document.getElementById("pilihan").innerHTML=html; }
+function jawab(i,btn){ let semua=document.querySelectorAll("#pilihan button"); semua.forEach(b=>b.disabled=true); let benar=soal[idx].j; if(i===benar){ poin+=10; btn.classList.add("betul"); document.getElementById("hasil").innerHTML="✅ BETUL! +10 Poin 🎉"; document.getElementById("hasil").className="betul-bg"; document.getElementById("confetti").innerHTML="🎉🎊✨🌟 👏👏👏"; mainTepukTangan(); } else { btn.classList.add("salah"); semua[benar].classList.add("betul"); document.getElementById("hasil").innerHTML="❌ OOPS! Yang Betul: "+soal[idx].p[benar]; document.getElementById("hasil").className="salah-bg"; mainSalah(); } idx++; setTimeout(()=>{ document.getElementById("hasil").innerHTML=""; document.getElementById("hasil").className=""; document.getElementById("confetti").innerHTML=""; tampil(); },1600); }
+</script>
+</body>
+</html>
