@@ -169,7 +169,7 @@ function tampilMitra(){
 let wadah=document.getElementById("listMitra"); if(!wadah) return;
 let jalan=document.getElementById("mitraJalan");
 if(mitraFolderAktif===null){
-  if(jalan) jalan.innerHTML=`<button class="btn-kembali-beranda" onclick="kembaliKeBeranda()">🏠 ⬅️ Kembali ke Beranda</button> &nbsp; 📁 Mitra Sekolah`;
+  if(jalan) jalan.innerHTML=`<button class="btn-kembali-beranda" onclick="window.location.href='index.html'">🏠 ⬅️ Kembali ke Beranda</button> &nbsp; 📁 Mitra Sekolah`;
   let html=`<div class="mitra-folder">`;
   daftarFolderMitra.forEach(f=>{
     let jml=hitungFotoMitra(f.nama);
