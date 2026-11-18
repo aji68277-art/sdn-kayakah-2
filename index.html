@@ -403,19 +403,5 @@ function mulai(mapel){ mapelAktif=mapel; let bank=[]; if(mapel==='MTK') bank=ban
 function tampil(){ if(idx>=soal.length){ document.getElementById("soal").innerHTML="Selesai! 🎉"; document.getElementById("pilihan").innerHTML=`<button onclick="mulai('${mapelAktif}')">Main Lagi</button>`; document.getElementById("hasil").innerHTML=`Nilai Akhir: ${poin*10} / 100`; document.getElementById("hasil").className=poin>=80?"betul-bg":"salah-bg"; document.getElementById("confetti").innerHTML=poin>=80?"🏆🎉 HEBAT SEKALI!":"💪 SEMANGAT! COBA LAGI!"; document.getElementById("poin").innerHTML=`Poin: ${poin}`; if(poin>=80) mainSelesaiHebat(); return; } soal[idx]=acakSatuSoal(soal[idx]); document.getElementById("poin").innerHTML=`Poin: ${poin} | Soal: ${idx+1}/10`; document.getElementById("soal").innerHTML=`<b>${idx+1}. ${soal[idx].q}</b>`; document.getElementById("hasil").innerHTML=""; document.getElementById("hasil").className=""; document.getElementById("confetti").innerHTML=""; let html=""; soal[idx].p.forEach((pil,i)=>{ html+=`<button onclick="jawab(${i},this)">${pil}</button>`; }); document.getElementById("pilihan").innerHTML=html; }
 function jawab(i,btn){ let semua=document.querySelectorAll("#pilihan button"); semua.forEach(b=>b.disabled=true); let benar=soal[idx].j; if(i===benar){ poin+=10; btn.classList.add("betul"); document.getElementById("hasil").innerHTML="✅ BETUL! +10 Poin 🎉"; document.getElementById("hasil").className="betul-bg"; document.getElementById("confetti").innerHTML="🎉🎊✨🌟 👏👏👏"; mainTepukTangan(); } else { btn.classList.add("salah"); semua[benar].classList.add("betul"); document.getElementById("hasil").innerHTML="❌ OOPS! Yang Betul: "+soal[idx].p[benar]; document.getElementById("hasil").className="salah-bg"; mainSalah(); } idx++; setTimeout(()=>{ document.getElementById("hasil").innerHTML=""; document.getElementById("hasil").className=""; document.getElementById("confetti").innerHTML=""; tampil(); },1600); }
 </script>
-  <script>
-setInterval(function(){
-  if(document.body.innerText.includes('Login Sebagai')){
-    ['loginModal','modalLogin','loginAdminModal','popupLogin'].forEach(function(id){
-      var e=document.getElementById(id); if(e) e.style.display='none';
-    });
-    document.querySelectorAll('div').forEach(function(d){
-      if(d.innerText && d.innerText.includes('Login Admin') && d.innerText.includes('MASUK')){
-        d.style.display='none';
-      }
-    });
-  }
-},500);
-</script>
 </body>
 </html>
