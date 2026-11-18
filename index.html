@@ -312,9 +312,9 @@ function mulaiDengarGuru(){
       return;
     }
     let pinBaru={}, jabBaru={}, fotoBaru={};
-    snap.docs.forEach(d=>{ let g=d.data(); if(!g.nama) return; if(g.pin)pinBaru[g.nama]=g.pin; jabBaru[g.nama]=g.jabatan; if(g.foto) fotoBaru[g.nama]=g.foto; });
+    snap.docs.forEach(d=>{ let g=d.data(); if(!g.nama) return; if(g.pin)pinBaru[g.nama]=g.pin; if(g.jabatan)jabBaru[g.nama]=g.jabatan; if(g.foto) fotoBaru[g.nama]=g.foto; });
     // Jangan timpa dengan data kosong
-    if(Object.keys(pinBaru).length>0){ daftarPIN={...def,...daftarPIN,...pinBaru}; jabatanAdmin=jabBaru; fotoGuru=fotoBaru; try{localStorage.setItem("pin_kayakah",JSON.stringify(daftarPIN)); localStorage.setItem("jabatan_kayakah",JSON.stringify(jabatanAdmin)); localStorage.setItem("foto_guru_kayakah",JSON.stringify(fotoGuru));}catch(e){} }
+    if(Object.keys(pinBaru).length>0){ daftarPIN={...def,...daftarPIN,...pinBaru}; jabatanAdmin={...jabatanAdmin,...jabBaru}; fotoGuru={...fotoGuru,...fotoBaru}; try{localStorage.setItem("pin_kayakah",JSON.stringify(daftarPIN)); localStorage.setItem("jabatan_kayakah",JSON.stringify(jabatanAdmin)); localStorage.setItem("foto_guru_kayakah",JSON.stringify(fotoGuru));}catch(e){} }
     renderGaleriGuru(); isiDropdownLogin(); if(adminLogin===NAMA_KEPSEK) tampilTabelPIN();
   }, (err)=>{ console.log("Guru pakai cadangan laptop", err); });
 }
