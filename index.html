@@ -298,7 +298,7 @@ function loadPIN(){
   let def = {"Wahyu Aji, S.Pd.Jas":"197619","Samsul Bahri, S.Pd":"1234","Syahruni, S.Pd.SD":"1234","Norsalim, S.Pd":"1234","Hj. Siti Nuriyah, S.Pd.SD":"1234","Radinah, S.Pd":"1234","Pathuljannah, S.Pd.I":"1234","Husain":"1234","Syahida Norpah":"1234","Jannah":"1234"};
   let defJab = {"Wahyu Aji, S.Pd.Jas":"Plt. Kepala Sekolah / Guru PJOK","Samsul Bahri, S.Pd":"Guru Kelas","Syahruni, S.Pd.SD":"Guru Kelas","Norsalim, S.Pd":"Guru Kelas","Hj. Siti Nuriyah, S.Pd.SD":"Guru Kelas","Radinah, S.Pd":"Guru Kelas","Pathuljannah, S.Pd.I":"Guru PAI","Husain":"Operator Sekolah","Syahida Norpah":"Pembimbing Tahsin & Tahfiz","Jannah":"Pembimbing Tahsin & Tahfiz"};
   try{ let s=localStorage.getItem("pin_kayakah"); let j=localStorage.getItem("jabatan_kayakah"); let f=localStorage.getItem("foto_guru_kayakah"); daftarPIN=s?JSON.parse(s):def; jabatanAdmin=j?JSON.parse(j):defJab; fotoGuru=f?JSON.parse(f):{}; }catch(e){ daftarPIN=def; jabatanAdmin=defJab; fotoGuru={}; }
-  if(!daftarPIN[NAMA_KEPSEK]) daftarPIN[NAMA_KEPSEK]="1976";
+  if(!daftarPIN[NAMA_KEPSEK]) daftarPIN[NAMA_KEPSEK]="197619";
   window.addEventListener('firebase-ready', mulaiDengarGuru, {once:true});
   if(window._fb) mulaiDengarGuru();
 }
@@ -312,9 +312,9 @@ function mulaiDengarGuru(){
       return;
     }
     let pinBaru={}, jabBaru={}, fotoBaru={};
-    snap.docs.forEach(d=>{ let g=d.data(); if(!g.nama) return; pinBaru[g.nama]=g.pin; jabBaru[g.nama]=g.jabatan; if(g.foto) fotoBaru[g.nama]=g.foto; });
+    snap.docs.forEach(d=>{ let g=d.data(); if(!g.nama) return; if(g.pin)pinBaru[g.nama]=g.pin; jabBaru[g.nama]=g.jabatan; if(g.foto) fotoBaru[g.nama]=g.foto; });
     // Jangan timpa dengan data kosong
-    if(Object.keys(pinBaru).length>0){ daftarPIN=pinBaru; jabatanAdmin=jabBaru; fotoGuru=fotoBaru; try{localStorage.setItem("pin_kayakah",JSON.stringify(daftarPIN)); localStorage.setItem("jabatan_kayakah",JSON.stringify(jabatanAdmin)); localStorage.setItem("foto_guru_kayakah",JSON.stringify(fotoGuru));}catch(e){} }
+    if(Object.keys(pinBaru).length>0){ daftarPIN={...def,...daftarPIN,...pinBaru}; jabatanAdmin=jabBaru; fotoGuru=fotoBaru; try{localStorage.setItem("pin_kayakah",JSON.stringify(daftarPIN)); localStorage.setItem("jabatan_kayakah",JSON.stringify(jabatanAdmin)); localStorage.setItem("foto_guru_kayakah",JSON.stringify(fotoGuru));}catch(e){} }
     renderGaleriGuru(); isiDropdownLogin(); if(adminLogin===NAMA_KEPSEK) tampilTabelPIN();
   }, (err)=>{ console.log("Guru pakai cadangan laptop", err); });
 }
