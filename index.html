@@ -297,7 +297,7 @@ let guruSudahDisimpanSekali = false;
 function loadPIN(){
   let def = {"Wahyu Aji, S.Pd.Jas":"197619","Samsul Bahri, S.Pd":"1234","Syahruni, S.Pd.SD":"1234","Norsalim, S.Pd":"1234","Hj. Siti Nuriyah, S.Pd.SD":"1234","Radinah, S.Pd":"1234","Pathuljannah, S.Pd.I":"1234","Husain":"1234","Syahida Norpah":"1234","Jannah":"1234"};
   let defJab = {"Wahyu Aji, S.Pd.Jas":"Plt. Kepala Sekolah / Guru PJOK","Samsul Bahri, S.Pd":"Guru Kelas","Syahruni, S.Pd.SD":"Guru Kelas","Norsalim, S.Pd":"Guru Kelas","Hj. Siti Nuriyah, S.Pd.SD":"Guru Kelas","Radinah, S.Pd":"Guru Kelas","Pathuljannah, S.Pd.I":"Guru PAI","Husain":"Operator Sekolah","Syahida Norpah":"Pembimbing Tahsin & Tahfiz","Jannah":"Pembimbing Tahsin & Tahfiz"};
-  try{ let s=localStorage.getItem("pin_kayakah"); let j=localStorage.getItem("jabatan_kayakah"); let f=localStorage.getItem("foto_guru_kayakah"); daftarPIN=s?JSON.parse(s):def; jabatanAdmin=j?JSON.parse(j):defJab; fotoGuru=f?JSON.parse(f):{}; }catch(e){ daftarPIN=def; jabatanAdmin=defJab; fotoGuru={}; }
+  try{ let s=localStorage.getItem("pin_kayakah"); let j=localStorage.getItem("jabatan_kayakah"); let f=localStorage.getItem("foto_guru_kayakah"); daftarPIN={...def,...(s?JSON.parse(s):{})}; jabatanAdmin={...defJab,...(j?JSON.parse(j):{})}; fotoGuru=f?JSON.parse(f):{}; }catch(e){ daftarPIN=def; jabatanAdmin=defJab; fotoGuru={}; }
   if(!daftarPIN[NAMA_KEPSEK]) daftarPIN[NAMA_KEPSEK]="197619";
   window.addEventListener('firebase-ready', mulaiDengarGuru, {once:true});
   if(window._fb) mulaiDengarGuru();
