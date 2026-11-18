@@ -315,8 +315,26 @@ function mulaiDengarGuru(){
     snap.docs.forEach(d=>{ let g=d.data(); if(!g.nama) return; if(g.pin)pinBaru[g.nama]=g.pin; if(g.jabatan)jabBaru[g.nama]=g.jabatan; if(g.foto) fotoBaru[g.nama]=g.foto; });
     // Jangan timpa dengan data kosong
     if(Object.keys(pinBaru).length>0){ daftarPIN={...def,...daftarPIN,...pinBaru}; jabatanAdmin={...jabatanAdmin,...jabBaru}; fotoGuru={...fotoGuru,...fotoBaru}; try{localStorage.setItem("pin_kayakah",JSON.stringify(daftarPIN)); localStorage.setItem("jabatan_kayakah",JSON.stringify(jabatanAdmin)); localStorage.setItem("foto_guru_kayakah",JSON.stringify(fotoGuru));}catch(e){} }
-    renderGaleriGuru(); isiDropdownLogin(); if(adminLogin===NAMA_KEPSEK) tampilTabelPIN();
+    renderGaleriGuru();
+    isiDropdownLogin(); if(adminLogin===NAMA_KEPSEK) tampilTabelPIN();
   }, (err)=>{ console.log("Guru pakai cadangan laptop", err); });
+}
+  function tampilTabelPIN(){
+  let wadah = document.getElementById('wadahTabelPIN');
+  if(!wadah){
+    wadah = document.createElement('div');
+    wadah.id = 'wadahTabelPIN';
+    wadah.style.marginTop = '20px';
+    let panel = document.getElementById('panelAdmin') || document.getElementById('adminPanel') || document.body;
+    panel.appendChild(wadah);
+  }
+  let html = '<h3>Daftar PIN Guru</h3><table border="1" cellpadding="8" style="width:100%;border-collapse:collapse;background:white"><tr><th>Nama</th><th>Jabatan</th><th>PIN</th></tr>';
+  Object.keys(daftarPIN).forEach(function(nama){
+    let jab = (typeof jabatanAdmin !== 'undefined' && jabatanAdmin[nama]) ? jabatanAdmin[nama] : '';
+    html += '<tr><td>'+nama+'</td><td>'+jab+'</td><td><b>'+daftarPIN[nama]+'</b></td></tr>';
+  });
+  html += '</table>';
+  wadah.innerHTML = html;
 }
 async function simpanPINkeFirebaseSaja(){
   if(!window._fb) return;
